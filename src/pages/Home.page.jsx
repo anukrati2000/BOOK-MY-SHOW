@@ -15,11 +15,29 @@ const HomePage = () => {
 
     useEffect(() => {
         const requestTopRatedMovies = async () => {
-            const getTopRatedMovies = await axios.get('https://api.themoviedb.org/3/movie/top_rated?api_key=4056335cfb92729162efae4504e05508&language=en-US&page=1');
+            const getTopRatedMovies = await axios.get('/movie/top_rated');
             setRecommendedMovies(getTopRatedMovies.data.results);
         }
 
         requestTopRatedMovies();
+    }, []);
+
+    useEffect(() => {
+        const requestPopularMovies = async () => {
+            const getPopularMovies = await axios.get('/movie/popular');
+            setPremierMovies(getPopularMovies.data.results);
+        }
+
+        requestPopularMovies();
+    }, []);
+
+    useEffect(() => {
+        const requestUpcomingMovies = async () => {
+            const getUpcomingMovies = await axios.get('/movie/upcoming');
+            setOnlineStreamEvents(getUpcomingMovies.data.results);
+        }
+
+        requestUpcomingMovies();
     }, []);
 
     return (
@@ -36,7 +54,7 @@ const HomePage = () => {
                 <PosterSlider
                     title="Recommended Movies"
                     subtitle="List of recommended movies"
-                    posters={recommendedMovies}
+                    posters={premierMovies}
                     isDark={false}
                 />
             </div>
@@ -53,7 +71,7 @@ const HomePage = () => {
                     <PosterSlider
                         title="Premiers"
                         subject="Brand new releases every Friday"
-                        posters={premierMovies}
+                        posters={recommendedMovies}
                         isDark={true}
                     />
                 </div>
