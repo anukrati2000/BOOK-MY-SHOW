@@ -179,8 +179,9 @@ const MoviePage = () => {
                         Cast and Crew
                     </h2>
                     <Slider {...settingCast}>
-                        {cast?.map((castData) => (
+                        {cast?.map((castData, index) => (
                             <Cast
+                                key={index}
                                 image={castData.profile_path}
                                 castName={castData.original_name}
                                 role={castData.character}
