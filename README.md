@@ -46,3 +46,7 @@ Install all dependencies of this project with npm
 ```bash
   npm init
 ```
+
+## Deployment
+
+This site is deployed on vercel with Link "https://vercel.com/anukrati2000/book-my-show-jv2q"
