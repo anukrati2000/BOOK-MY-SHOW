@@ -49,4 +49,4 @@ Install all dependencies of this project with npm
 
 ## Deployment
 
-This site is deployed on vercel with Link "https://vercel.com/anukrati2000/book-my-show-jv2q"
+Website can be accessed at https://book-my-show-jv2q.vercel.app/ or https://book-my-show-jv2q-git-master-anukrati2000.vercel.app/
